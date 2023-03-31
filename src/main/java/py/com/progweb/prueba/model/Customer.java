@@ -10,8 +10,8 @@ public class Customer {
     @Id
     @Column(name = "id")
     @Basic(optional = false)
-    @GeneratedValue(generator = "agendaSec", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name="agendaSec", sequenceName = "agenda_sec", allocationSize = 0)
+    @GeneratedValue(generator = "clienteSec", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name="clienteSec", sequenceName = "clientes_sec", allocationSize = 0)
     private Integer idCliente;
 
     @Column(name = "nombre", length = 255)
