@@ -18,4 +18,16 @@ public class ConceptsPointsDAO {
         return (List<ConceptsPoints>) q.getResultList();
     }
 
+    public void agregar(ConceptsPoints cp) {
+        this.em.persist(cp);
+    }
+
+    public void modificar(ConceptsPoints cp){
+        this.em.merge(cp);
+    }
+
+    public void eliminar(ConceptsPoints cp){
+        cp = em.merge(cp);
+        em.remove(cp);
+    }
 }
