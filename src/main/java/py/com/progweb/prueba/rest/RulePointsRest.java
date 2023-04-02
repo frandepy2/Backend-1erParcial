@@ -26,4 +26,19 @@ public class RulePointsRest {
         this.rulesDAO.agregar(rp);
         return Response.ok().build();
     }
+
+    @PUT
+    @Path("/")
+    public Response modificar(RulePoints rp){
+        this.rulesDAO.modificar(rp);
+        return Response.ok().build();
+    }
+
+    @DELETE
+    @Path("/")
+    public Response eliminar(RulePoints rp){
+        this.rulesDAO.eliminar(rp);
+        return Response.ok().build();
+    }
+
 }

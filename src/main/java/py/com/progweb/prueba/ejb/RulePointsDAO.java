@@ -19,6 +19,16 @@ public class RulePointsDAO {
     }
 
     public void agregar(RulePoints rules){
+
         this.em.persist(rules);
+    }
+
+    public void modificar(RulePoints rp){
+        this.em.merge(rp);
+    }
+
+    public void eliminar(RulePoints rp){
+        rp = em.merge(rp);
+        em.remove(rp);
     }
 }
