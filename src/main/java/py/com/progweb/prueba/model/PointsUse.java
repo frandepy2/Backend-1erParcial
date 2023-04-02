@@ -1,10 +1,8 @@
 package py.com.progweb.prueba.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name="uso_puntos_cab")
@@ -28,12 +26,6 @@ public class PointsUse {
     @Basic(optional = false)
     private String concepto;
 
-    @OneToMany(mappedBy = "idCabecera",fetch = FetchType.LAZY)
-    private List<Detail> detalles;
-
-    @Transient
-    private List<Detail> detallesJson;
-
     public PointsUse() {
     }
 
@@ -43,14 +35,6 @@ public class PointsUse {
 
     public void setIdUsoPuntos(Integer idUsoPuntos) {
         this.idUsoPuntos = idUsoPuntos;
-    }
-
-    public List<Detail> getDetallesJson() {
-        return detallesJson;
-    }
-
-    public void setDetallesJson(List<Detail> detallesJson) {
-        this.detallesJson = detallesJson;
     }
 
     public Integer getIdCliente() {
@@ -85,11 +69,4 @@ public class PointsUse {
         this.concepto = concepto;
     }
 
-    public List<Detail> getDetalles() {
-        return detalles;
-    }
-
-    public void setDetalles(List<Detail> detalles) {
-        this.detalles = detalles;
-    }
 }
